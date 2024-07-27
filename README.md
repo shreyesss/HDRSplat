@@ -284,8 +284,11 @@ python metrics.py -m <path to trained model> # Compute error metrics on renderin
 
 ## Acknowledgement 
 The authors of this paper wish to express their gratitude to the following works for their significant contributions to the field, which have greatly enabled and inspired our research.
+
 [RawNeRF](https://bmild.github.io/rawnerf/)
+
 [3D gaussain splatting](https://github.com/graphdeco-inria/gaussian-splatting/tree/main)
+
 [PMRID](https://github.com/MegEngine/PMRID)
 
 ## Concurrent Work 
