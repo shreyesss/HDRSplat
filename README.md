@@ -3,6 +3,9 @@ Shreyas Singh*, Aryan Garg*, Kaushik Mitra (* indicates equal contribution)<br>
 [Webpage](https://aryan-garg.github.io/hdrsplat/) | [arXiv](https://arxiv.org/abs/2407.16503)
 
 ![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/main.jpg)
+![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/results.jpg)
+![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/pointcloud.jpg)
+
 
 
 Abstract: *The recent advent of 3D Gaussian Splatting (3DGS) has revolutionized the 3D scene reconstruction space enabling high-fidelity novel view synthesis in real-time. However, with the exception of RawNeRF, all prior 3DGS and NeRF-based methods rely on 8-bit tone-mapped Low Dynamic Range (LDR) images for scene reconstruction. Such methods struggle to achieve accurate reconstructions in scenes that require a higher dynamic range. Examples include scenes captured in nighttime or poorly lit indoor spaces having a low signal-to-noise ratio, as well as daylight scenes with shadow regions exhibiting extreme contrast. Our proposed method HDRSplat tailors 3DGS to train directly on 14-bit linear raw images in near darkness which preserves the scenes' full dynamic range and content. Our key contributions are two-fold: Firstly, we propose a linear HDR space-suited loss that effectively extracts scene information from noisy dark regions and nearly saturated bright regions simultaneously, while also handling view-dependent colors without increasing the degree of spherical harmonics. Secondly, through careful rasterization tuning, we implicitly overcome the heavy reliance and sensitivity of 3DGS on point cloud initialization. This is critical for accurate reconstruction in regions of low texture, high depth of field, and low illumination. HDRSplat is the fastest method to date that does 14-bit (HDR) 3D scene reconstruction in ≤15 minutes/scene (∼30x faster than prior state-of-the-art RawNeRF). It also boasts the fastest inference speed at ≥120fps. We further demonstrate the applicability of our HDR scene reconstruction by showcasing various applications like synthetic defocus, dense depth map extraction, and post-capture control of exposure, tone-mapping and view-point.*
@@ -43,6 +46,8 @@ The codebase has 3 main components:
 - 3D gaussian splatitng based differentiable rasterization for 3D scene reconstruction form Raw images
 - A PMRID based pre-processing and denoising step in the Bayer-Raw space
 - A flexible Image Signal Processing Pipeline to convert 14-bit Raw images to 8 bit images for display
+
+![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/architecture.jpg)
 
 
 
@@ -137,6 +142,7 @@ this will create a sub-folder called **denoised** in the scene folder with the f
       |      |---<metadata for raw image 1>
       |      |---...
 ```
+![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/denoise.jpg)
       
 The follwing 5 metadata values are essential for our end to end pipeline:
 1. ISO, 
