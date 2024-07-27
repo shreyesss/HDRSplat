@@ -3,7 +3,6 @@ Shreyas Singh*, Aryan Garg*, Kaushik Mitra (* indicates equal contribution)<br>
 [Webpage](https://aryan-garg.github.io/hdrsplat/) | [arXiv](https://arxiv.org/abs/2407.16503)
 
 ![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/main.jpg)
-![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/results.jpg)
 ![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/pointcloud.jpg)
 
 
@@ -84,7 +83,7 @@ pip install -e .
 ```
 ## Dataset
 
-The Codebase builds on top of the RawNeRF dataset introduced by [Mildenhall.et.al](https://bmild.github.io/rawnerf/). Download the dataset from their website, the directory structure should look like this.
+HDRSplat uses the RawNeRF dataset introduced by [Mildenhall.et.al](https://bmild.github.io/rawnerf/). The dataset can be downloaded from their website. The directory structure should look like this.
 ```
 <location>
 |---scene1
@@ -106,6 +105,7 @@ The Codebase builds on top of the RawNeRF dataset introduced by [Mildenhall.et.a
 |---scene2
 |---....
 ```
+**1. To proccess your own dataset, or generate a HDRSplat style dataset from RawNeRF dataset follow these steps:**
 To create a train test split for a scene using random sampling, run
 ```shell
 python create_train_test_split.py <path to COLMAP dataset scene> --test_percentage 15
@@ -142,9 +142,7 @@ this will create a sub-folder called **denoised** in the scene folder with the f
       |      |---<metadata for raw image 1>
       |      |---...
 ```
-![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/denoise.jpg)
-      
-The follwing 5 metadata values are essential for our end to end pipeline:
+The follwing folder contains the Demosaied Bayer raw images and PMRID denoised images and their corresponding LDR versions (converted using our minimalistic pipeline for visualization). The **PMRID denoised images** are used to train our **HDRSplat** model and the **simply demosaiced** images are used to train our RAw3DGS baseline. The script additionally also generates a metadata.ply file for each view in the scene. The follwing 5 metadata values are essential for our end to end pipeline:
 1. ISO, 
 2. Exposure
 3. BlackLevel
@@ -153,7 +151,7 @@ The follwing 5 metadata values are essential for our end to end pipeline:
 
 **Or**
 
-Directly download our processed dataset from [Link](DummyLink), and skip straight to the training and evaluation stage!
+**2. Directly download our processed dataset from [Link](DummyLink), and skip straight to the training and evaluation stage!**
 
 ## Training & Evaluation
 
@@ -263,6 +261,26 @@ python metrics.py -m <path to trained model> # Compute error metrics on renderin
 </details>
 <br>
 
-## Benchmarking 
+## Benchmarking (Coming Soon)
+To render and evalaute the models mentioned in the paper for benchmarking:
+1. Download our trained checkpoints:
+  i.  [HDRSplat](Link1)  
+  ii.  [Raw3DGS (Baseline)](Link2)  
+  iii.  [LDR3DGS (Baseline)](Link2)  
+
+2. Run the following scripts in order
+```shell
+python render.py -m <path to trained model> # Generate renderings
+python metrics.py -m <path to trained model> # Compute error metrics on renderings
+```
+
+## Results 
+
+![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/results.jpg)
+![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/denoise.jpg)
+![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/pointcloud.jpg)
+
+
+
 
 
