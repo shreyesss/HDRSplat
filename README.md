@@ -263,10 +263,11 @@ python metrics.py -m <path to trained model> # Compute error metrics on renderin
 
 ## Benchmarking (Coming Soon)
 To render and evalaute the models mentioned in the paper for benchmarking:
-1. Download our trained checkpoints:
-  i.  [HDRSplat](Link1)  
-  ii.  [Raw3DGS (Baseline)](Link2)  
-  iii.  [LDR3DGS (Baseline)](Link2)  
+1. Download our trained checkpoints:\
+
+    i.  [HDRSplat](Link1)  
+    ii.  [Raw3DGS (Baseline)](Link2)  
+    iii.  [LDR3DGS (Baseline)](Link2)  
 
 2. Run the following scripts in order
 ```shell
