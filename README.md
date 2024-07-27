@@ -282,6 +282,22 @@ python metrics.py -m <path to trained model> # Compute error metrics on renderin
 ![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/pointcloud.jpg)
 
 
+## Acknowledgement 
+The authors of this paper wish to express their gratitude to the following works for their significant contributions to the field, which have greatly enabled and inspired our research.
+[RawNeRF](https://bmild.github.io/rawnerf/)
+[3D gaussain splatting](https://github.com/graphdeco-inria/gaussian-splatting/tree/main)
+[PMRID](https://github.com/MegEngine/PMRID)
+
+## Concurrent Work 
+
+There's a lot of excellent work that was introduced around the same time as ours.
+
+[HDR-GS](https://arxiv.org/abs/2405.15125) also introduces HDR space 3D reconstructions.
+
+[LE3D](https://arxiv.org/abs/2406.06216) uses a color-MLP explicitly unlike ours to represent RAW color space.
+
+
+
 
 
 
