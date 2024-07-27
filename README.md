@@ -3,7 +3,6 @@ Shreyas Singh*, Aryan Garg*, Kaushik Mitra (* indicates equal contribution)<br>
 [Webpage](https://aryan-garg.github.io/hdrsplat/) | [arXiv](https://arxiv.org/abs/2407.16503)
 
 ![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/main.jpg)
-![Alt text](https://github.com/shreyesss/HDRSplat-3DGS-for-HDR-scene-reconstruction/blob/main/assets/pointcloud.jpg)
 
 
 
