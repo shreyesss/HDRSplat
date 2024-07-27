@@ -105,11 +105,13 @@ HDRSplat uses the RawNeRF dataset introduced by [Mildenhall.et.al](https://bmild
 |---....
 ```
 **1. To proccess your own dataset, or generate a HDRSplat style dataset from RawNeRF dataset follow these steps:**
-To create a train test split for a scene using random sampling, run
+
+1. To create a train test split for a scene using random sampling, run
 ```shell
 python create_train_test_split.py <path to COLMAP dataset scene> --test_percentage 15
 ```
-To demosaic and then denoise the images using PMRID and save them to disk, run
+
+2. To demosaic and then denoise the images using PMRID and save them to disk, run
 ```shell
 python generate_denoised_images.py --scene_path <path to COLMAP dataset>
 ```
